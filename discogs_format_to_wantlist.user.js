@@ -27,6 +27,7 @@ function Add_Format($albumformat)
 
 $(document).ready(function() {
     $("div.collections_buttons").css("height","auto");
+    $("#page_aside div.section_content a.want_add_all_button").css('width', '100%');
 
     $('<br \\><a style="margin-top: 5px; width: 100%;" id="addalllp" class="button button_small">Add All LP To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
     $("#addalllp").click(function() { Add_Format("LP") });
@@ -36,5 +37,4 @@ $(document).ready(function() {
 
     $('<br \\><a style="margin-top: 5px; width: 100%;" id="addallcassette" class="button button_small">Add All Cassette To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
     $("#addallcassette").click(function() { Add_Format("Cass") });
-
 });
