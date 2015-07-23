@@ -5,6 +5,7 @@
 // @version      0.1
 // @description  adds buttons to discogs master release page for adding all of a certain format to your wantlist
 // @author       Joey Liechty, Scott Powers
+// @match        http://www.discogs.com/master/*
 // @match        http://www.discogs.com/*/master/*
 // @grant        none
 // ==/UserScript==
@@ -15,7 +16,10 @@ function Add_Format($albumformat)
 
         if($(this).text().indexOf($albumformat) > -1)
         {
-            $(this).closest('tr').find('td.actions li.add_to_wantlist').trigger("mouseover").trigger("click");
+            if($(this).text().indexOf('Unofficial') == -1)
+            {
+                $(this).closest('tr').find('td.actions li.add_to_wantlist').trigger("mouseover").trigger("click");
+            }
         }
     });
 }
@@ -24,10 +28,13 @@ function Add_Format($albumformat)
 $(document).ready(function() {
     $("div.collections_buttons").css("height","auto");
 
-    $('<a style="margin-top: 5px;" id="addalllp" class="button button_small">Add All LP To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
+    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addalllp" class="button button_small">Add All LP To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
     $("#addalllp").click(function() { Add_Format("LP") });
 
-    $('<a style="margin-top: 5px;" id="addallcd" class="button button_small">Add All CD To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
+    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addallcd" class="button button_small">Add All CD To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
     $("#addallcd").click(function() { Add_Format("CD") });
+
+    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addallcassette" class="button button_small">Add All Cassette To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
+    $("#addallcassette").click(function() { Add_Format("Cass") });
 
 });

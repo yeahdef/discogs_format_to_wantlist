@@ -8,3 +8,5 @@ You can install this .user.js file as a [Tampermonkey](https://tampermonkey.net/
 
 
 In the future, I plan on adding buttons for all formats, but it currently supports releases with 'CD' and 'LP' in the format string. I also plan on making it look a bit better, and perhaps making it into a chrome extension.
+
+It ignores 'Unofficial' releases.
