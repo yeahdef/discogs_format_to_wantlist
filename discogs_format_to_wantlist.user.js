@@ -37,4 +37,10 @@ $(document).ready(function() {
 
     $('<br \\><a style="margin-top: 5px; width: 100%;" id="addallcassette" class="button button_small">Add All Cassette To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
     $("#addallcassette").click(function() { Add_Format("Cass") });
+    
+    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addall12" class="button button_small">Add All 12\" To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
+    $("#addall12").click(function() { Add_Format("12") });
+    
+    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addall7" class="button button_small">Add All 7\" To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
+    $("#addall7").click(function() { Add_Format("7") });
 });
