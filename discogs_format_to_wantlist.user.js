@@ -40,37 +40,24 @@ function Has_Format($albumformat)
 }
 
 $(document).ready(function() {
+  // set format details
+  var formats = {
+    "lp": {"id": "addalllp", "searchkey": "LP", "text": "LP"},
+    "cd": {"id": "addallcd", "searchkey": "CD", "text": "CD"},
+    "cass": {"id": "addallcass", "searchkey": "Cass", "text": "Cassette"},
+    "12": {"id": "addall12", "searchkey": "12\"", "text": "12 inch"},
+    "7": {"id": "addall7", "searchkey": "7\"", "text": "7 inch"},
+  };
+  // set the css of the remove button
   $("div.collections_buttons").css("height","auto");
   $("#page_aside div.section_content a.want_add_all_button").css('width', '100%');
-  
-  if(Has_Format("LP") == true)
-  {
-    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addalllp" class="button button_small">Add All LP To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
-    $("#addalllp").click(function() { Add_Format("LP") });
-  }
-
-  if(Has_Format("CD") == true)
-  {
-    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addallcd" class="button button_small">Add All CD To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
-    $("#addallcd").click(function() { Add_Format("CD") });
-  }
-
-  if(Has_Format("Cass") == true)
-  {
-    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addallcassette" class="button button_small">Add All Cassette To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
-    $("#addallcassette").click(function() { Add_Format("Cass") });
-  }
-
-  if(Has_Format("12\"") == true)
-  {
-    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addall12" class="button button_small">Add All 12\" To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
-    $("#addall12").click(function() { Add_Format("12") });
-  }
-
-  if(Has_Format("7\"") == true)
-  {
-    $('<br \\><a style="margin-top: 5px; width: 100%;" id="addall7" class="button button_small">Add All 7\" To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
-    $("#addall7").click(function() { Add_Format("7") });
+  // iterate through formats and make buttons
+  for (var key in formats){
+    if(Has_Format(formats[key]["searchkey"]) == true)
+    {
+      $('<br \\><a style="margin-top: 5px; width: 100%;" id="' + formats[key]['id'] + '" class="button button_small">Add All ' + formats[key]["text"] + ' To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
+      $("#" + formats[key]['id']).click(function() { Add_Format(formats[key]["searchkey"]) });
+    }
   }
 
 });
