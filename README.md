@@ -8,7 +8,6 @@ Install [Tampermonkey](https://tampermonkey.net/) and point your browser [here](
 
 # TODO
 
-- Dynamically populate the format buttons (some albums don't have a vinyl option, so why show the button)
 - Make it a chrome extension
 
 note: It ignores 'Unofficial' releases.
