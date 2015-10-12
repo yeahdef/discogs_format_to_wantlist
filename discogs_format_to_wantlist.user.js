@@ -45,8 +45,8 @@ $(document).ready(function() {
     "lp": {"id": "addalllp", "searchkey": "LP", "text": "LP"},
     "cd": {"id": "addallcd", "searchkey": "CD", "text": "CD"},
     "cass": {"id": "addallcass", "searchkey": "Cass", "text": "Cassette"},
-    "12": {"id": "addall12", "searchkey": "12\"", "text": "12 inch"},
-    "7": {"id": "addall7", "searchkey": "7\"", "text": "7 inch"},
+    "12": {"id": "addall12", "searchkey": "12", "text": "12 inch"},
+    "7": {"id": "addall7", "searchkey": "7", "text": "7 inch"},
   };
   // set the css of the remove button
   $("div.collections_buttons").css("height","auto");
@@ -56,7 +56,12 @@ $(document).ready(function() {
     if(Has_Format(formats[key]["searchkey"]) == true)
     {
       $('<br \\><a style="margin-top: 5px; width: 100%;" id="' + formats[key]['id'] + '" class="button button_small">Add All ' + formats[key]["text"] + ' To Want List</a>').insertAfter("#page_aside div.section_content a.want_add_all_button");
-      $("#" + formats[key]['id']).click(function() { Add_Format(formats[key]["searchkey"]) });
+      $("#" + formats[key]['id']).click(function(keyid) {
+        return function()
+        {
+          Add_Format(formats[keyid]["searchkey"]);
+        }
+      }(key));
     }
   }
 
