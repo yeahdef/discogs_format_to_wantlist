@@ -13,6 +13,7 @@ countries = [
   'Europe',
   'US',
   'UK',
+  'Canada',
   'Germany',
   'France',
   'Spain',
@@ -21,9 +22,13 @@ countries = [
   'Australasia', //Discogs term for Australia and Asia
   'Norway',
   'Sweden',
+  'Scandinavia',
   'Greece',
   'Poland',
-  'Italy'
+  'Finland',
+  'Netherlands',
+  'Italy',
+  'Czech Republic'
 ];
 function Add_Format($albumformat)
 {
