@@ -1,4 +1,4 @@
-# Discogs add all of format to wantlist
+# Discogs add all of format to wantlist (edited to only include a selection of country releases)
 
 Due to [this thread](http://www.discogs.com/forum/thread/363499) being unfulfilled after 2+ years, I decided to use this as an oppourtunity to teach myself some jquery (I am a novice).
 
