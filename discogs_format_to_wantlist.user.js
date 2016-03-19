@@ -5,8 +5,8 @@
 // @version      0.2
 // @description  adds buttons to discogs master release page for adding all of a certain format to your wantlist
 // @author       Joey Liechty, Scott Powers
-// @match        http://www.discogs.com/master/*
-// @match        http://www.discogs.com/*/master/*
+// @match        https://www.discogs.com/master/*
+// @match        https://www.discogs.com/*/master/*
 // @grant        none
 // ==/UserScript==
 countries = [
